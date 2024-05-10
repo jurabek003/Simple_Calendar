@@ -48,10 +48,10 @@ fun ContentItem(
 ) {
     Box(
         modifier = modifier
-            .clip(RoundedCornerShape(35.dp))
+            .clip(RoundedCornerShape(10.dp))
             .background(
                 color = if (date.isSelected) {
-                    MaterialTheme.colorScheme.secondaryContainer
+                    MaterialTheme.colorScheme.onErrorContainer
                 } else {
                     Color.Transparent
                 }
@@ -62,6 +62,7 @@ fun ContentItem(
     ) {
         Text(
             text = date.dayOfMonth,
+            color = if (date.isSelected) Color.White else Color.Black,
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier
                 .align(Alignment.Center)
